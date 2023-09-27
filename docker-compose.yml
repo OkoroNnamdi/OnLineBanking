@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  onlinebanking:
+    image: ${DOCKER_REGISTRY-}onlinebanking
+    build:
+      context: .
+      dockerfile: OnLineBanking/Dockerfile

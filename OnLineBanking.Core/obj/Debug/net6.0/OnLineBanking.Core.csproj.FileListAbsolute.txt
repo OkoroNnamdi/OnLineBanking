@@ -1,0 +1,12 @@
+C:\OnLineBanking\OnLineBanking.Core\bin\Debug\net6.0\OnLineBanking.Core.deps.json
+C:\OnLineBanking\OnLineBanking.Core\bin\Debug\net6.0\OnLineBanking.Core.dll
+C:\OnLineBanking\OnLineBanking.Core\bin\Debug\net6.0\OnLineBanking.Core.pdb
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\OnLineBanking.Core.csproj.AssemblyReference.cache
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\OnLineBanking.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\OnLineBanking.Core.AssemblyInfoInputs.cache
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\OnLineBanking.Core.AssemblyInfo.cs
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\OnLineBanking.Core.csproj.CoreCompileInputs.cache
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\OnLineBanking.Core.dll
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\refint\OnLineBanking.Core.dll
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\OnLineBanking.Core.pdb
+C:\OnLineBanking\OnLineBanking.Core\obj\Debug\net6.0\ref\OnLineBanking.Core.dll

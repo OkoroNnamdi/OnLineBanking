@@ -1,0 +1,14 @@
+C:\OnLineBanking\bin\Debug\OnLineBanking.deps.json
+C:\OnLineBanking\bin\Debug\OnLineBanking.runtimeconfig.json
+C:\OnLineBanking\bin\Debug\appsettings.Development.json
+C:\OnLineBanking\bin\Debug\appsettings.json
+C:\OnLineBanking\bin\Debug\OnLineBanking.exe
+C:\OnLineBanking\bin\Debug\OnLineBanking.dll
+C:\OnLineBanking\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\OnLineBanking\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\OnLineBanking\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\OnLineBanking\bin\Debug\Microsoft.OpenApi.dll
+C:\OnLineBanking\bin\Debug\OnLineBanking.pdb
+C:\OnLineBanking\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\OnLineBanking\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\OnLineBanking\obj\Debug\docker-compose.dcproj.CopyComplete

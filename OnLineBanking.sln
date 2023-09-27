@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnLineBanking", "OnLineBanking\OnLineBanking.csproj", "{EF66E116-764B-4027-BF18-EA7661667549}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnLineBanking.Core", "OnLineBanking.Core\OnLineBanking.Core.csproj", "{D60933A8-DC7F-447D-AD4D-BC07F9E60660}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnLineBanking.Infrastructure", "OnLineBanking.Infrastructure\OnLineBanking.Infrastructure.csproj", "{9F9267FC-739B-4C5E-8C86-6BC8B9C97FDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBanking.Test", "OnlineBanking.Test\OnlineBanking.Test.csproj", "{8847C0B4-685D-413A-8EA6-4B88994946D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBanking.Application", "OnlineBanking.Application\OnlineBanking.Application.csproj", "{33053C84-56A3-4487-A627-56A7128F37ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineBanking.Sercice", "OnLineBanking.Sercice\OnLineBanking.Sercice.csproj", "{98374BB7-A0D7-46B7-B5E7-A2E4EFDD80D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF66E116-764B-4027-BF18-EA7661667549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF66E116-764B-4027-BF18-EA7661667549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF66E116-764B-4027-BF18-EA7661667549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF66E116-764B-4027-BF18-EA7661667549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60933A8-DC7F-447D-AD4D-BC07F9E60660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60933A8-DC7F-447D-AD4D-BC07F9E60660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60933A8-DC7F-447D-AD4D-BC07F9E60660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60933A8-DC7F-447D-AD4D-BC07F9E60660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F9267FC-739B-4C5E-8C86-6BC8B9C97FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F9267FC-739B-4C5E-8C86-6BC8B9C97FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F9267FC-739B-4C5E-8C86-6BC8B9C97FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F9267FC-739B-4C5E-8C86-6BC8B9C97FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8847C0B4-685D-413A-8EA6-4B88994946D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8847C0B4-685D-413A-8EA6-4B88994946D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8847C0B4-685D-413A-8EA6-4B88994946D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8847C0B4-685D-413A-8EA6-4B88994946D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33053C84-56A3-4487-A627-56A7128F37ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33053C84-56A3-4487-A627-56A7128F37ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33053C84-56A3-4487-A627-56A7128F37ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33053C84-56A3-4487-A627-56A7128F37ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98374BB7-A0D7-46B7-B5E7-A2E4EFDD80D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98374BB7-A0D7-46B7-B5E7-A2E4EFDD80D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98374BB7-A0D7-46B7-B5E7-A2E4EFDD80D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98374BB7-A0D7-46B7-B5E7-A2E4EFDD80D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38A01F51-675E-4234-9B13-D09C6CF22BA5}
+	EndGlobalSection
+EndGlobal

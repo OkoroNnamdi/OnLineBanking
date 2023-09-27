@@ -1,0 +1,12 @@
+C:\OnLineBanking\OnlineBanking.Test\bin\Debug\net6.0\OnlineBanking.Test.deps.json
+C:\OnLineBanking\OnlineBanking.Test\bin\Debug\net6.0\OnlineBanking.Test.dll
+C:\OnLineBanking\OnlineBanking.Test\bin\Debug\net6.0\OnlineBanking.Test.pdb
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.csproj.AssemblyReference.cache
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.AssemblyInfoInputs.cache
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.AssemblyInfo.cs
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.csproj.CoreCompileInputs.cache
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.dll
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\refint\OnlineBanking.Test.dll
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.pdb
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\ref\OnlineBanking.Test.dll
