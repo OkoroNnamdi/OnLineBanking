@@ -6,17 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using OnLineBanking.Core.DTO;
 using OnLineBanking.Core.Domain.DTO;
+using AspNetCoreHero.Results;
 
 namespace OnLineBanking.Core.IRepository
 {
     public interface IAuthenticationRepository
     {
-        Task<Response<LoginUserDTO>> Login(LoginDTO model);
-        Task<bool> Register(RegisterUserDTO user);
-        Task<Response<string>> RefreshToken();
-        public Task<Response<string>> ChangePassword(ChangePasswordDTO changePasswordDTO);
-        public Task<object> ResetPassword(UpdatePasswordDTO resetPasswordDTO);
-        public Task<Response<string>> ForgottenPassword(ResetPasswordDTO model);
+         public Task<Result<LoginUserDTO>> Login(LoginDTO model);
+         public  Task<Result <string> >Register(RegisterUserDTO user);
+         public  Task<Result<string>> RefreshToken();
+        public Task<Result<string>> ChangePassword(ChangePasswordDTO changePasswordDTO);
+        public Task<Result<string >> ResetPassword(UpdatePasswordDTO resetPasswordDTO);
+        public Task<Result<string>> ForgottenPassword(ResetPasswordDTO model);
         Task Signout();
     }
 }

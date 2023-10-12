@@ -8,10 +8,12 @@ namespace OnLineBanking.Core.Domain.DTO
 {
     public  class LoginUserDTO
     {
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string username { get; set; }
-        public IList<string> roles { get; set; }
-        public string token { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string Username { get; set; }
+        public IList<string> Roles { get; set; }
+        public string Token { get; set; }
+         public string RefreshToken { get; set; }
+        public string Email { get; set; }
     }
 }

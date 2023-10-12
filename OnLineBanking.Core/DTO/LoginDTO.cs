@@ -9,8 +9,8 @@ namespace OnLineBanking.Core.Domain.DTO
 {
     public  class LoginDTO
     {
-        [Required(ErrorMessage = "AppUser Name is required")]
-        public string Username { get; set; }
+        [Required(ErrorMessage = "Email is required")]
+        public string Email { get; set; }
         [Required(ErrorMessage = "AppUser password is required")]
         public string Password { get; set; }
     }

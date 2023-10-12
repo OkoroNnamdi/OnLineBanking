@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "EKKeC4jXfJnabKcPQHVcGyzbT1yjBQpJd2ipLIkUklB0VSR9cihebcYRXkfS7s23/OYH02lIJ/mTSQJmrPF+uA==",
+  "dgSpecHash": "C8N5Vy5Q/6OWCtAX6CG3ugqqb4PRwyYKczaihyEbSP64RkLtED47oHr0NvbskXS+974EfHlkj6lYvgLBcFn8Gg==",
   "success": true,
   "projectFilePath": "C:\\OnLineBanking\\OnlineBanking.Test\\OnlineBanking.Test.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Decagon Device\\.nuget\\packages\\aspnetcorehero.results\\1.1.1\\aspnetcorehero.results.1.1.1.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",

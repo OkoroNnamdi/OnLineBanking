@@ -1,0 +1,17 @@
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.csproj.AssemblyReference.cache
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.AssemblyInfoInputs.cache
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.AssemblyInfo.cs
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.csproj.CoreCompileInputs.cache
+C:\OnLineBanking\OnLineBanking.Sercice\bin\Debug\net6.0\OnLineBanking.Service.deps.json
+C:\OnLineBanking\OnLineBanking.Sercice\bin\Debug\net6.0\OnLineBanking.Service.dll
+C:\OnLineBanking\OnLineBanking.Sercice\bin\Debug\net6.0\OnLineBanking.Service.pdb
+C:\OnLineBanking\OnLineBanking.Sercice\bin\Debug\net6.0\OnlineBanking.Application.dll
+C:\OnLineBanking\OnLineBanking.Sercice\bin\Debug\net6.0\OnLineBanking.Core.dll
+C:\OnLineBanking\OnLineBanking.Sercice\bin\Debug\net6.0\OnLineBanking.Core.pdb
+C:\OnLineBanking\OnLineBanking.Sercice\bin\Debug\net6.0\OnlineBanking.Application.pdb
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.csproj.CopyComplete
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.dll
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\refint\OnLineBanking.Service.dll
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.pdb
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\ref\OnLineBanking.Service.dll

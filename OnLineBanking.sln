@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBanking.Test", "Onlin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBanking.Application", "OnlineBanking.Application\OnlineBanking.Application.csproj", "{33053C84-56A3-4487-A627-56A7128F37ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnLineBanking.Sercice", "OnLineBanking.Sercice\OnLineBanking.Sercice.csproj", "{98374BB7-A0D7-46B7-B5E7-A2E4EFDD80D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnLineBanking.Service", "OnLineBanking.Sercice\OnLineBanking.Service.csproj", "{98374BB7-A0D7-46B7-B5E7-A2E4EFDD80D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
