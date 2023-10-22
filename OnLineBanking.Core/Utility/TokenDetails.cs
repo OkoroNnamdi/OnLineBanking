@@ -25,9 +25,9 @@ namespace OnLineBanking.Core.Utility
             return _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
         }
 
-        public string GetUserName()
+        public string GetUserEmail()
         {
-          return  _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Name);
+          return  _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Email);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using OnLineBanking.Core.DTO;
+﻿using AspNetCoreHero.Results;
+using OnLineBanking.Core.DTO;
 using OnLineBanking.Core.Enum;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,8 @@ namespace OnLineBanking.Core.IRepository
 {
     public interface IAdminRepository
     {
-        Task<bool> CreateRole(RoleDTO role);
-        Task<bool> AddUserRole(string userId, Role role);
-        Task<bool> RemoveUserRole(string userId, Role role);
+        Task<Result <string >> CreateRole(RoleDTO role);
+        Task <Result<string>> AddUserRole(string userId, Role role);
+        Task<Result<string>> RemoveUserRole(string userId, Role role);
     }
 }

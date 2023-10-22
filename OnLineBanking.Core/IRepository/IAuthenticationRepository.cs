@@ -16,8 +16,9 @@ namespace OnLineBanking.Core.IRepository
          public  Task<Result <string> >Register(RegisterUserDTO user);
          public  Task<Result<string>> RefreshToken();
         public Task<Result<string>> ChangePassword(ChangePasswordDTO changePasswordDTO);
-        public Task<Result<string >> ResetPassword(UpdatePasswordDTO resetPasswordDTO);
+        public Task<Result<string >> ResetPassword(UpdatePasswordDTO model);
         public Task<Result<string>> ForgottenPassword(ResetPasswordDTO model);
+        public Task<Result<string>> Confirmemail(string email, string token);
         Task Signout();
     }
 }

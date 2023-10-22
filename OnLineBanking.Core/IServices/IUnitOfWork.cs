@@ -7,14 +7,21 @@ using System.Threading.Tasks;
 
 namespace OnLineBanking.Core.IServices
 {
-    public  interface IUnitOfWork
+    public  interface IUnitOfWork:IDisposable
     {
-        IAdminRepository AdminRepository { get; }
+       
         IBankBranchRepository BankBranchRepository { get; }
         ICustomerRepository CustomerRepository { get; }
         IManagerRepository ManagerRepository { get; }
         IManagerRequestRepository RequestRepository { get; }
         IRateBankRepository RankRepository { get; }
         IUpdateAppUserRepository UpdateAppUserRepository { get; }
+        Task SaveChanges();
+
+        void BeginTransaction();
+
+        void Rollback();
+
+
     }
 }

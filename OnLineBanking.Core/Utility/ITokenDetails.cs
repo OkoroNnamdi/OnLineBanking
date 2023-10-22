@@ -9,7 +9,7 @@ namespace OnLineBanking.Core.Utility
     public interface ITokenDetails
     {
        public  string GetId();
-       public  string GetUserName();
+       public  string GetUserEmail();
        public string GetRoles();
     }
 }

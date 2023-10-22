@@ -2,6 +2,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using OnlineBanking.Application;
 using OnLineBanking.Core.Domain;
 using OnLineBanking.Core.Domain.DTO;
@@ -118,24 +119,141 @@ namespace OnLineBanking.Core.Repository
             await _userManager.UpdateAsync(user);
             await _context.SaveChangesAsync();
         }
-        public Task<Result<string>> RefreshToken()
+        public async  Task<Result<string>> RefreshToken()
         {
-            throw new NotImplementedException();
+            var currentToken = _httpContext.HttpContext.Request.Cookies["refresh-token"];
+            var user = await _userManager.FindByIdAsync(_tokenDetails.GetId());
+
+            var response = new Result<string>();
+            response.Succeeded = false;
+            //return await Result<string>.FailAsync();
+            if (user == null || user.RefreshToken != currentToken)
+            {
+                response.Data = "Invalid refresh token";
+            }
+            else if (user.RefreshTokenExpiryTime < DateTime.Now)
+            {
+                response.Message = "Token Expired";
+            }
+            else
+            {
+                var UserModel = new UserModel
+                {
+                    Id = _tokenDetails.GetId(),
+                    Email = _tokenDetails.GetUserEmail(),
+                    Role = _tokenDetails.GetRoles()
+                };
+
+                response.Succeeded = true;
+                response.Data = _token.CreateToken(UserModel);
+                response.Message = "Successful refreshed token";
+                var refreshToken = _token.SetRefreshToken();
+                await SaveRefreshToken(user, refreshToken);
+            }
+            return response;
         }
 
-        public Task<Result<string>> Register(RegisterUserDTO user)
+        public async  Task<Result<string>> Register(RegisterUserDTO user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // checks if a user with the specified email already exists in the system
+                var checkUser = await _userManager.FindByEmailAsync(user.Email);
+                if (checkUser != null)
+                {
+                    return await Result<string>.FailAsync("user already exist");
+                }
+
+                var names = user.FullName.Split(" ");
+
+
+                var newUser = new AppUser()
+                {
+                    Email = user.Email,
+                    FirstName = names[0],
+                    LastName = names.Length > 1 ? names[1] : string.Empty,
+                    UserName = user.Email,
+                    PhoneNumber = user.Phone
+                };
+
+                //var newUser = _mapper.Map<AppUser>(user);
+
+
+                var roles = await _roleManager.Roles.ToListAsync();
+                //If there are no roles, it creates a new role with the name "User".
+                if (roles.Count == 0) await _roleManager.CreateAsync(new IdentityRole { Name = "User" });
+                //create a new user in the system
+                var result = await _userManager.CreateAsync(newUser, user.Password);
+                if (!result.Succeeded)
+                {
+                    return await Result<string>.FailAsync("user could not be created");
+                }
+                //If the user creation is successful, the function adds the new user to the "User"  role
+                await _userManager.AddToRoleAsync(newUser, "Customer");
+                //generates an email confirmation token
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+                return new Result<string> { Succeeded = true, Data = token, Message = $"click the link sent to {user.Email} to confirm your email" };
+            }
+            catch (Exception ex)
+            {
+
+                return await Result<string>.FailAsync(ex.Message + "user could not be created, an error occured");
+            }
+
         }
 
-        public Task<Result<string>> ResetPassword(UpdatePasswordDTO resetPasswordDTO)
+        public async  Task<Result<string>> ResetPassword(UpdatePasswordDTO model)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if (user == null)
+                {
+                    return await Result<string>.FailAsync("an error occured while comfirming email");
 
-        public Task Signout()
+                }
+                var result = await _userManager.ResetPasswordAsync(user, model.Token, model.NewPassword);
+
+                if (!result.Succeeded)
+                {
+                    // return "The Provided Reset Token is Invalid or Has expired";
+                    return await Result<string>.FailAsync("an error occured while comfirming email");
+                }
+
+                return await Result<string>.SuccessAsync("Password Reset Successfully");
+            }
+            catch (Exception ex)
+            {
+
+                return await Result<string>.FailAsync(ex.Message + "user could not be reset, an error occured");
+            }
+        }
+        public async  Task<Result<string>> Confirmemail(string email, string token)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+                if (user == null)
+                {
+                    return await Result<string>.FailAsync("user does not exist");
+                }
+                var res = await _userManager.ConfirmEmailAsync(user, token);
+                if (!res.Succeeded)
+                {
+                    return await Result<string>.FailAsync ("email has been confirmation failed");
+                }
+                return await Result<string>.SuccessAsync("email has been confirmed");
+            }
+            catch (Exception ex)
+            {
+
+                return await Result<string>.FailAsync(ex.Message + "email could not be confirmed, an error occured");
+            }
+        }
+        public async  Task Signout()
+        {
+            var headers = _httpContext.HttpContext.Request.Headers;
+            headers.Remove("Authorisation");
         }
     }
 }
