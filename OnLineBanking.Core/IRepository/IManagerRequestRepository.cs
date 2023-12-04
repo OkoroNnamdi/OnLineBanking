@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnLineBanking.Core.IRepository
 {
-    public  interface IManagerRequestRepository:IGenericRepositry <ManagerRequest>
+    public  interface IManagerRequestRepository:IGenericRepository <ManagerRequest>
     {
         Task<ManagerRequest> GetManagerRequestById(string managerId);
     }

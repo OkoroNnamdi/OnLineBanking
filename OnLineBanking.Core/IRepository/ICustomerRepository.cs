@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnLineBanking.Core.IRepository
 {
-    public  interface ICustomerRepository:IGenericRepositry <Customer>
+    public  interface ICustomerRepository:IGenericRepository <Customer>
     {
         Task<Response<List<Customer>>> GetTopBankBranch(string BankBranchId);
         Task<IQueryable<Customer>> GetCustomers(int pageNo);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnLineBanking.Core.IRepository
 {
-    public  interface IRateBankRepository:IGenericRepositry <Rating>
+    public  interface IRateBankRepository:IGenericRepository <Rating>
     {
         Task RateBank(Rating Rating);
     }

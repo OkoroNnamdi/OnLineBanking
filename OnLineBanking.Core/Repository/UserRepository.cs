@@ -73,8 +73,6 @@ namespace OnLineBanking.Core.Repository
                 return false;
             }
         }
-    
-
         public async  Task<IEnumerable<AppUserDto>> GetUserAsynce(string Role)
         {
             var users = _context.Users;

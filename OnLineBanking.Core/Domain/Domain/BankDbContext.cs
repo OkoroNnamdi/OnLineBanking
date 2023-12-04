@@ -11,11 +11,14 @@ namespace OnlineBanking.Application
 {
     public  class BankDbContext:IdentityDbContext<AppUser>
     {
+        DbSet<Customer > customers { get;set; }
+        DbSet <BankBranch > bankBranches { get;set; }
+        DbSet <Account> accounts { get;set; }
+
         public BankDbContext(DbContextOptions<BankDbContext> Options) : base(Options)
         {
 
         }
-
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var item in ChangeTracker.Entries<BaseEntity>())

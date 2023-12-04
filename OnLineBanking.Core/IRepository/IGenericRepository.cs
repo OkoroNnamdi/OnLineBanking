@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace OnLineBanking.Core.IRepository
 {
-    public  interface IGenericRepositry<T>where T: class
+    public  interface IGenericRepository<T>where T: class
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<List<T>> GetAllAsync(Expression<Func<T, bool>> filter = null);
+        public Task<T> GetByIdAsync(string id, T Value);
         Task<T> GetByIdAsync(Expression<Func<T, bool>> filter = null, bool tracked = true);
         Task AddAsync(T entity);
         Task UpdateAsync<T>(T Value, T entity);

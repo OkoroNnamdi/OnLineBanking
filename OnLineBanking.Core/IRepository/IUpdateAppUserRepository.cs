@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnLineBanking.Core.IRepository
 {
-    public  interface IUpdateAppUserRepository:IGenericRepositry<AppUser>
+    public  interface IUpdateAppUserRepository:IGenericRepository<AppUser>
     {
         Task UpdateAsync(AppUser user);
     }
