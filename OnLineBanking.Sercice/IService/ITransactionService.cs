@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnLineBanking.Sercice
+namespace OnLineBanking.Service.IService
 {
-    public  interface ITransactionService
+    public interface ITransactionService
     {
         Task<Response<string>> CreateNewTransaction(Transaction transactions);
         Task<Response<string>> FindTransactionByDate(DateTime dateTime);

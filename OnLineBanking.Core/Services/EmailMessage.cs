@@ -19,5 +19,9 @@ namespace OnLineBanking.Core.Services
             Subject = subject;
             Content = content;
         }
+        public EmailMessage()
+        {
+            
+        }
     }
 }

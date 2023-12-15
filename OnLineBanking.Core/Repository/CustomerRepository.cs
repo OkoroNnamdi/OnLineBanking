@@ -24,12 +24,13 @@ namespace OnLineBanking.Core.Repository
 
         public async Task<IQueryable<Customer>> GetCustomers(int pageNo)
         {
-            var customers = await _context.customer
-              .Include(a => a.AppUser)
-              .ToListAsync();
+            //var customers = await _context.customers
+            //  .Include(a => a.AppUser)
+            //  .ToListAsync();
 
-            var listOfCustomers = customers.AsQueryable();
-            return listOfCustomers;
+            //var listOfCustomers = customers.AsQueryable();
+            //return listOfCustomers;
+            throw new NotImplementedException();
         }
 
         public Task<List<Customer>> GetCustomersByBankBranch(string BankBranchId)

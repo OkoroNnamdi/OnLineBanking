@@ -18,6 +18,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.20",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.20",
           "MimeKit": "4.2.0",
+          "NETCore.MailKit": "2.1.0",
           "OnLineBanking.Core": "1.0.0",
           "Serilog.Sinks.File": "5.0.0",
           "Serilog.Sinks.RavenDB": "3.0.0",
@@ -96,6 +97,17 @@
           "lib/netstandard1.0/Lambda2Js.Signed.dll": {
             "assemblyVersion": "3.1.2.0",
             "fileVersion": "3.1.2.0"
+          }
+        }
+      },
+      "MailKit/3.2.0": {
+        "dependencies": {
+          "MimeKit": "4.2.0"
+        },
+        "runtime": {
+          "lib/net6.0/MailKit.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
           }
         }
       },
@@ -601,6 +613,18 @@
           "lib/net6.0/MimeKit.dll": {
             "assemblyVersion": "4.2.0.0",
             "fileVersion": "4.2.0.0"
+          }
+        }
+      },
+      "NETCore.MailKit/2.1.0": {
+        "dependencies": {
+          "MailKit": "3.2.0",
+          "Microsoft.Extensions.DependencyInjection": "6.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/NETCore.MailKit.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
           }
         }
       },
@@ -1542,6 +1566,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore": "6.0.20",
           "MimeKit": "4.2.0",
+          "NETCore.MailKit": "2.1.0",
           "Serilog.Sinks.File": "5.0.0",
           "Serilog.Sinks.RavenDB": "3.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
@@ -1559,6 +1584,7 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "MimeKit": "4.2.0",
+          "NETCore.MailKit": "2.1.0",
           "OnlineBanking.Application": "1.0.0",
           "Serilog": "2.10.0",
           "Serilog.Sinks.File": "5.0.0",
@@ -1625,6 +1651,13 @@
       "sha512": "sha512-0gi3SLV2ZKjmmnSYROM7IRaRrWJT3BvQ5iinGA3diXmKxGE9AZaVV049QHKd04DYEJ04oW5hAnsZBfxUiBjxGg==",
       "path": "lambda2js.signed/3.1.2",
       "hashPath": "lambda2js.signed.3.1.2.nupkg.sha512"
+    },
+    "MailKit/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5MTpTqmjqT7HPvYbP3HozRZMth5vSaT0ReN0iM3rAM4CgLI/R1qqtLDDNWGnFFIlcNzeJkZQRJJMkv8cgzWBbA==",
+      "path": "mailkit/3.2.0",
+      "hashPath": "mailkit.3.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",
@@ -2038,6 +2071,13 @@
       "sha512": "sha512-HlfWiJ6t40r8u/rCK2p/8dm1ILiWw4XHucm2HImDYIFS3uZe7IKZyaCDafEoZR7VG7AW1JQxNPQCAxmAnJfRvA==",
       "path": "mimekit/4.2.0",
       "hashPath": "mimekit.4.2.0.nupkg.sha512"
+    },
+    "NETCore.MailKit/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+1C0sg4YJQczp/2RVrVbKLIntg7Mou7Ie5M01UBiAsxmIarjfBRlCgKK4sEbPyGask52VRKV29/Zi+41B6LPXA==",
+      "path": "netcore.mailkit/2.1.0",
+      "hashPath": "netcore.mailkit.2.1.0.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",

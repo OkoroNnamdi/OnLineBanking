@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "v8Er0ZldAc4e+BbAAQ9QoMyRmK62YA0NYFjlC02m85KVSLTPtp/ado5wcNLBk1KdDWwWBaR6+JzIvkotvHURlA==",
+  "dgSpecHash": "F3vFNLJH1v3C3C5y/5leNDDwWt2QrtN1SW1eLuRJ6EjUXSJ0qKF68ukYNoIBjfIQb00Z2YkmnIhmg/62XKttbw==",
   "success": true,
   "projectFilePath": "C:\\OnLineBanking\\OnLineBanking.Infrastructure\\OnLineBanking.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Decagon Device\\.nuget\\packages\\cloudinarydotnet\\1.22.0\\cloudinarydotnet.1.22.0.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\lambda2js.signed\\3.1.2\\lambda2js.signed.3.1.2.nupkg.sha512",
+    "C:\\Users\\Decagon Device\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
@@ -70,6 +71,7 @@
     "C:\\Users\\Decagon Device\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\mimekit\\4.2.0\\mimekit.4.2.0.nupkg.sha512",
+    "C:\\Users\\Decagon Device\\.nuget\\packages\\netcore.mailkit\\2.1.0\\netcore.mailkit.2.1.0.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Decagon Device\\.nuget\\packages\\ravendb.client\\4.2.0\\ravendb.client.4.2.0.nupkg.sha512",

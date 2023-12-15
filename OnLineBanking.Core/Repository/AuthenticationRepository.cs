@@ -55,7 +55,6 @@ namespace OnLineBanking.Core.Repository
 
             return await Result<string>.SuccessAsync("password changed successfully");
         }
-
         public async  Task<Result<string>> ForgottenPassword(ResetPasswordDTO model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
@@ -70,7 +69,7 @@ namespace OnLineBanking.Core.Repository
             return await Result<string>.SuccessAsync("A password reset Link has been sent to your email address");
         }
 
-        public async  Task<Result<LoginUserDTO>> Login(LoginDTO model)
+        public async Task<Result<LoginUserDTO>> Login(LoginDTO model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
 

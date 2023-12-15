@@ -77,6 +77,10 @@
               "target": "Package",
               "version": "[4.2.0, )"
             },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Serilog.Sinks.File": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -182,6 +186,10 @@
             "MimeKit": {
               "target": "Package",
               "version": "[4.2.0, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             },
             "Serilog": {
               "target": "Package",

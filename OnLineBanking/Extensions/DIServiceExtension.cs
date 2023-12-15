@@ -12,9 +12,9 @@ namespace OnLineBanking.Infrastructure.Extensions
 {
     public static   class DIServiceExtension
     {
-       public static void AddDependencyInjection(this IServiceCollection services, IConfiguration config)
+       public static void AddDependencyInjection(this IServiceCollection services)
         {
-            services.Configure<CloudinarySetting>(config.GetSection(""));
+           // services.Configure<CloudinarySetting>(config.GetSection(""));
             // service Injection 
             services.AddScoped<ITokenDetails,TokenDetails>();
             services.AddScoped <ITokenServices,TokenServices>();
