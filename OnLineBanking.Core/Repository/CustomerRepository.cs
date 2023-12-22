@@ -1,4 +1,4 @@
-﻿using OnlineBanking.Application;
+﻿using OnLineBanking.Core.Utility;
 using OnLineBanking.Core.Domain;
 using OnLineBanking.Core.IRepository;
 using System;
@@ -6,41 +6,88 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace OnLineBanking.Core.Repository
 {
     public class CustomerRepository : GenericRepository<Customer>, ICustomerRepository
     {
-        private readonly BankDbContext _context;
-        public CustomerRepository(BankDbContext bankDbContext) : base(bankDbContext)
+        private readonly OnlineBankDBContext _context;
+        public CustomerRepository(OnlineBankDBContext BankDBContext) : base(BankDBContext)
         {
-            _context = bankDbContext;
+            _context = BankDBContext;
         }
 
-        public Task<Customer> GetCustomer(string Id)
+        public async  Task<Customer> GetCustomer(string Id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var customer = await _context.Customers.Where
+                        (a => a.Accounts.Any(b => b.Id == Id))
+                        .FirstOrDefaultAsync();
+                return customer;
+            }
+            catch (Exception )
+            {
+
+                throw ;
+            }
         }
 
         public async Task<IQueryable<Customer>> GetCustomers(int pageNo)
         {
-            //var customers = await _context.customers
-            //  .Include(a => a.AppUser)
-            //  .ToListAsync();
+            try
+            {
+                var customer = await _context.Customers.Include(a => a.AppUser).ToListAsync();
+                var listOfCustomers = customer.AsQueryable();
+                return listOfCustomers;
+            }
+            catch (Exception)
+            {
 
-            //var listOfCustomers = customers.AsQueryable();
-            //return listOfCustomers;
-            throw new NotImplementedException();
+                throw;
+            }
         }
 
-        public Task<List<Customer>> GetCustomersByBankBranch(string BankBranchId)
+        public async  Task<List<Customer>> GetCustomersByBankBranch(string BankBranchId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var customer = await _context.Customers.Where
+               (c => c.Transactions.Any(a => a.BranchId == BankBranchId))
+               .Include(b => b.AppUser).ToListAsync();
+                return customer;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public Task<Response<List<Customer>>> GetTopBankBranch(string BankBranchId)
+        public async  Task<Response<List<Customer>>> GetTopBankBranch(string BankBranchId)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                var topCustomers = _context.Customers
+                                       .Include(b => b.AppUser)
+                                       .Select(a => new
+                                       {
+                                           Customer = a,
+                                           TotalAmount = a.Transactions.Where(a => a.BranchId == BankBranchId)
+                                           .Select(b => b.TransactionAmount).Sum()
+
+                                       }).OrderByDescending(a => a.TotalAmount)
+                                       .Select(a => a.Customer)
+                                       .ToListAsync();
+                return new Response<List<Customer>> { Data = await topCustomers };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

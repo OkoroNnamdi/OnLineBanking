@@ -3,7 +3,6 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using OnlineBanking.Application;
 using OnLineBanking.Core.Domain;
 using OnLineBanking.Core.Domain.DTO;
 using OnLineBanking.Core.IRepository;
@@ -28,12 +27,12 @@ namespace OnLineBanking.Core.Repository
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
-        private readonly BankDbContext _context;
+        private readonly OnlineBankDBContext _context;
       //  private readonly BankDbContext _context;
         public AuthenticationRepository(UserManager<AppUser> userManager, 
             ITokenServices token, ITokenDetails tokenDetails, 
             IHttpContextAccessor httpContext,RoleManager<IdentityRole>roleManager,
-            IMapper mapper,IEmailService emailService,BankDbContext context)
+            IMapper mapper,IEmailService emailService, OnlineBankDBContext context)
         {
             _userManager = userManager;
             _token = token;

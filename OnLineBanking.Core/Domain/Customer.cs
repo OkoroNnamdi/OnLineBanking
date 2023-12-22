@@ -17,6 +17,8 @@ namespace OnLineBanking.Core.Domain
         public string State { get; set; }
         public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }
+        public string BranchId { get; set; }
+        public BankBranch BankBranch { get; set; }
         public ICollection<Account> Accounts { get ; set; } 
         public ICollection <Transaction> Transactions { get ; set; }
         public ICollection<Address> Address { get;}

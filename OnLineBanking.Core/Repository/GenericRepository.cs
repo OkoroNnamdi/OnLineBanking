@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using OnlineBanking.Application;
 using OnLineBanking.Core.IRepository;
 using System;
 using System.Collections.Generic;
@@ -16,8 +15,8 @@ namespace OnLineBanking.Core.Repository
         protected DbSet<T> _dbSet;
         public IQueryable<T> Table => _dbSet;
         public IQueryable<T> TableNoTracking => _dbSet.AsNoTracking();
-        private readonly BankDbContext _bankDbContext;
-        public GenericRepository(BankDbContext bankDbContext)
+        private readonly OnlineBankDBContext _bankDbContext;
+        public GenericRepository(OnlineBankDBContext bankDbContext)
         {
             _bankDbContext = bankDbContext;
             _dbSet = bankDbContext.Set<T>();

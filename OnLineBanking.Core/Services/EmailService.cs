@@ -42,7 +42,7 @@ namespace OnLineBanking.Core.Services
                     await client.AuthenticateAsync(_emailConfig.UserName, _emailConfig.Password);
                     await client.SendAsync(mailMessage);
                 }
-                catch
+                catch(Exception ex) 
                 {
                     //log an error message or throw an exception or both.
                     throw;

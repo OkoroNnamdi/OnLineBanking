@@ -23,7 +23,10 @@ namespace OnLineBanking.Core.Domain
         public string TransactionParticulars { get; set; }
         [Required]
         public decimal TransactionAmount { get; set; }
+        public string BranchId { get;set; }
+        public BankBranch BankBranch { get; set; }
         public ICollection <Account >Accounts { get; set; }
+       
 
     }
 }

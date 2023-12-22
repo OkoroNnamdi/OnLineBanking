@@ -69,10 +69,6 @@
               "target": "Package",
               "version": "[6.0.20, )"
             },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.20, )"
-            },
             "MimeKit": {
               "target": "Package",
               "version": "[4.2.0, )"
@@ -175,11 +171,19 @@
               "target": "Package",
               "version": "[1.22.0, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.20, )"
             },
