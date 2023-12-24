@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using OnlineBanking.Application;
+using OnLineBanking.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace OnLineBanking.Infrastructure.Extensions
         }
         public static void AddDbContextAndConfigurations(this IServiceCollection services, IWebHostEnvironment env, IConfiguration config)
         {
-            services.AddDbContextPool<BankDbContext>(options =>
+            services.AddDbContextPool<OnlineBankDBContext>(options =>
             {
                 string connStr;
 

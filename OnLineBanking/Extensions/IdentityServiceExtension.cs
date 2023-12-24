@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
-using OnlineBanking.Application;
+using OnLineBanking.Core;
 using OnLineBanking.Core.Domain;
 using System;
 using System.Collections.Generic;
@@ -24,7 +23,7 @@ namespace OnLineBanking.Infrastructure.Extensions
                 options.SignIn.RequireConfirmedEmail = false;
             });
             builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), services);
-            builder.AddEntityFrameworkStores<BankDbContext>()
+            builder.AddEntityFrameworkStores<OnlineBankDBContext>()
                 .AddDefaultTokenProviders();
         }
     }

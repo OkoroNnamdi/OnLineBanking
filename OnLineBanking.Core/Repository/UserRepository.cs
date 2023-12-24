@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using OnlineBanking.Application;
 using OnLineBanking.Core.Domain;
 using OnLineBanking.Core.DTO;
 using OnLineBanking.Core.IRepository;
@@ -14,10 +13,10 @@ namespace OnLineBanking.Core.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private readonly BankDbContext _context;
+        private readonly OnlineBankDBContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
-        public UserRepository(BankDbContext context, UserManager<AppUser> userManager, IMapper mapper)
+        public UserRepository(OnlineBankDBContext context, UserManager<AppUser> userManager, IMapper mapper)
         {
             _context = context;
             _userManager = userManager;

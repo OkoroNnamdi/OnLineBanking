@@ -1,4 +1,4 @@
-﻿using OnlineBanking.Application;
+﻿
 using OnLineBanking.Core.Domain;
 using OnLineBanking.Core.IRepository;
 using System;
@@ -12,10 +12,10 @@ namespace OnLineBanking.Core.Repository
 {
    public  class BankBranchRepository: GenericRepository<BankBranch>, IBankBranchRepository
     {
-        private readonly BankDbContext _db;
-        public BankBranchRepository(BankDbContext db):base(db)
+        private readonly OnlineBankDBContext _context;
+        public BankBranchRepository(OnlineBankDBContext context):base(context )
         {
-            _db = db;
+            _context = context;
         }
 
         public Task AddAsync(IBankBranchRepository entity)

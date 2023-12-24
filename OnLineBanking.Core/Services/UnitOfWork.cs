@@ -1,4 +1,4 @@
-﻿using OnlineBanking.Application;
+﻿
 using OnLineBanking.Core.IRepository;
 using OnLineBanking.Core.IServices;
 using OnLineBanking.Core.Repository;
@@ -13,7 +13,7 @@ namespace OnLineBanking.Core.Services
     public class UnitOfWork : IUnitOfWork
 
     {
-        private readonly BankDbContext _db;
+        private readonly OnlineBankDBContext _db;
         private IAdminRepository _AdminRepository;
         private  IBankBranchRepository _BankBranchRepository;
         private ICustomerRepository _CustomerRepository;
@@ -21,7 +21,7 @@ namespace OnLineBanking.Core.Services
         private IManagerRequestRepository _RequestRepository;
         private IRateBankRepository _RankRepository;
         private IUpdateAppUserRepository _UpdateAppUserRepository;
-        public UnitOfWork(BankDbContext db)
+        public UnitOfWork(OnlineBankDBContext db)
         {
             _db=db;
         }
