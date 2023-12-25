@@ -25,12 +25,10 @@ namespace OnLineBanking.Core.Services
         {
             _db=db;
         }
-        //public IHotelRepository hotelRepository =>
-        //    _hotelRepository ??= new HotelRepository(_hotelDbContext);
         public IBankBranchRepository BankBranchRepository => _BankBranchRepository ??= new BankBranchRepository(_db);
-        public ICustomerRepository CustomerRepository => throw new NotImplementedException();
+        public ICustomerRepository CustomerRepository => _CustomerRepository ??= new CustomerRepository(_db);
 
-        public IManagerRepository ManagerRepository => throw new NotImplementedException();
+        public IManagerRepository ManagerRepository => _ManagerRepository ??= new ManagerRepository(_db);
 
         public IManagerRequestRepository RequestRepository => throw new NotImplementedException();
 
