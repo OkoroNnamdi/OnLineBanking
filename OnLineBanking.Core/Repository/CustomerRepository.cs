@@ -56,6 +56,7 @@ namespace OnLineBanking.Core.Repository
                 var customer = await _context.Customers.Where
                (c => c.Transactions.Any(a => a.BranchId == BankBranchId))
                .Include(b => b.AppUser).ToListAsync();
+              
                 return customer;
             }
             catch (Exception)

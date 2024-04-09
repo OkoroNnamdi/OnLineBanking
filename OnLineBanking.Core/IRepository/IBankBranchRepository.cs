@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace OnLineBanking.Core.IRepository
 {
-    public  interface IBankBranchRepository:IGenericRepository<IBankBranchRepository >
+    public  interface IBankBranchRepository:IGenericRepository<BankBranch >
     {
         void AddBankBranch(string Manager_ID, BankBranch bank);
-        void UpdateAsync(BankBranch bank);
+        Task UpdateAsync(BankBranch bank);
     }
 }

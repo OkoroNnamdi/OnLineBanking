@@ -16,10 +16,18 @@ namespace OnLineBanking.Core.Repository
     {
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
+
         public AdminRepository(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager)
         {
             _roleManager = roleManager;
             _userManager = userManager;
+        }
+        private readonly OnlineBankDBContext _context;
+        public AdminRepository(OnlineBankDBContext context)
+        {
+
+            _context = context;
+
         }
         public async  Task<Result<string>> AddUserRole(string userId, Role role)
         {

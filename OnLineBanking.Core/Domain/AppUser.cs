@@ -14,6 +14,7 @@ namespace OnLineBanking.Core.Domain
         public string Gender { get; set; } = string.Empty;
         public DateTime DateOfBirth { get; set; }
         public bool IsActive { get; set; } = true;
+        public string Avatar { get; set; }
         public string? PublicId { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; }

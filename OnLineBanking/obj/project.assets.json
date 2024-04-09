@@ -8058,6 +8058,7 @@
       "MimeKit >= 4.2.0",
       "NETCore.MailKit >= 2.1.0",
       "OnLineBanking.Core >= 1.0.0",
+      "OnlineBanking.Application >= 1.0.0",
       "Serilog >= 2.10.0",
       "Serilog.Sinks.File >= 5.0.0",
       "Serilog.Sinks.RavenDB >= 3.0.0",
@@ -8097,6 +8098,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\OnLineBanking\\OnlineBanking.Application\\OnlineBanking.Application.csproj": {
+              "projectPath": "C:\\OnLineBanking\\OnlineBanking.Application\\OnlineBanking.Application.csproj"
+            },
             "C:\\OnLineBanking\\OnLineBanking.Core\\OnLineBanking.Core.csproj": {
               "projectPath": "C:\\OnLineBanking\\OnLineBanking.Core\\OnLineBanking.Core.csproj"
             }
@@ -8181,7 +8185,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

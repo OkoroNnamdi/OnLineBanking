@@ -17,3 +17,4 @@ C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.pd
 C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\ref\OnLineBanking.Service.dll
 C:\OnLineBanking\OnLineBanking.Sercice\bin\Debug\net6.0\OnLineBanking.Service.runtimeconfig.json
 C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.genruntimeconfig.cache
+C:\OnLineBanking\OnLineBanking.Sercice\obj\Debug\net6.0\OnLineBanking.Service.sourcelink.json

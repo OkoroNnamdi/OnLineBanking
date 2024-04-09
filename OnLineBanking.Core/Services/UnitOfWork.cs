@@ -14,6 +14,7 @@ namespace OnLineBanking.Core.Services
 
     {
         private readonly OnlineBankDBContext _db;
+
         private IAdminRepository _AdminRepository;
         private  IBankBranchRepository _BankBranchRepository;
         private ICustomerRepository _CustomerRepository;
@@ -21,39 +22,75 @@ namespace OnLineBanking.Core.Services
         private IManagerRequestRepository _RequestRepository;
         private IRateBankRepository _RankRepository;
         private IUpdateAppUserRepository _UpdateAppUserRepository;
+        private IUserRepository _UserRepository;
+        private IBankAccountRepository _BankAccounRepository;
+        private IBankBranchRepository _BankBranchRepositoryBank;
+        private IAuthenticationRepository _authenticationRepository;
+        private IPaymentRepository _PaymentRepository;
+        private IReviewRepository _reviewRepository;
+        private ITransactionRepository _transactionRepository;
+        private IWishlistRepository _wishlistRepository;
         public UnitOfWork(OnlineBankDBContext db)
         {
             _db=db;
         }
+        private bool _disposed;
         public IBankBranchRepository BankBranchRepository => _BankBranchRepository ??= new BankBranchRepository(_db);
         public ICustomerRepository CustomerRepository => _CustomerRepository ??= new CustomerRepository(_db);
 
         public IManagerRepository ManagerRepository => _ManagerRepository ??= new ManagerRepository(_db);
 
-        public IManagerRequestRepository RequestRepository => throw new NotImplementedException();
+        public IManagerRequestRepository RequestRepository => _RequestRepository??= new ManagerRequestRepository(_db);
 
-        public IRateBankRepository RankRepository => throw new NotImplementedException();
+        public IRateBankRepository RankRepository => _RankRepository??=new RateBankRepository(_db);
 
-        public IUpdateAppUserRepository UpdateAppUserRepository => throw new NotImplementedException();
+        public IUpdateAppUserRepository UpdateAppUserRepository => _UpdateAppUserRepository ??= new UpdateAppUserRepository(_db);
+
+        public IPaymentRepository paymentRepository => _PaymentRepository??=new PaymentRepository(_db);
+        public IReviewRepository reviewRepository =>_reviewRepository??=new ReviewRepository (_db);
+        public ITransactionRepository transactionRepository =>
+            _transactionRepository??=new BankTransactionRepository (_db);
+        public IAdminRepository adminRepository => _AdminRepository??=new AdminRepository (_db);
+        public IUserRepository userRepository => _UserRepository??= new UserRepository (_db);
+        public IAuthenticationRepository authenticationRepository => 
+            _authenticationRepository ??= new AuthenticationRepository(_db);
+        public IBankAccountRepository BankAccounRepository =>
+            _BankAccounRepository ??= new AccountRepository(_db);
+        public IWishlistRepository wishlistRepository => _wishlistRepository ??=new WishlistRepository(_db);
+
+        public IRateBankRepository rateBankRepository => throw new NotImplementedException();
 
         public void BeginTransaction()
         {
-            throw new NotImplementedException();
+            _disposed = false;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
+        protected virtual void Dispose(bool disposing)
+        {
 
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _db.Dispose();
+                }
+            }
+
+            _disposed = true;
+        }
         public void Rollback()
         {
-            throw new NotImplementedException();
+           _db.Database.RollbackTransaction();
         }
 
-        public Task SaveChanges()
+        public async  Task SaveChanges()
         {
-            throw new NotImplementedException();
+           await _db.SaveChangesAsync();
         }
     }
 }

@@ -14,7 +14,6 @@ namespace OnLineBanking.Core.Domain
         public string BankbranchId { get; set; }
         public BankBranch BankBranch { get; set; }
         public string CustomerId { get; set; }
-
         public Customer Customer { get; set; }
     }
 }

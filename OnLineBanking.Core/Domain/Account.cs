@@ -12,12 +12,15 @@ namespace OnLineBanking.Core.Domain
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string Gender { get; set; } = string.Empty;
-        public string  AccountName { get;set; } = string.Empty; 
+        public string  AccountName { get;set; } = string.Empty;
+        public double Amount { get; set; } = 0;
         public DateTime DateOfBirth { get; set; }
         public bool IsActive { get; set; } = true;
         public string Account_Number { get; set; }= string.Empty;
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; }
+        public byte[] PasswordSalt { get; set; }
+        public byte[] PasswordHash { get; set; }
         public ICollection <Transaction > Transactions { get; set; }
         public ICollection <Customer> Customers { get; set; }
         public ICollection <Address >Addresses { get; set; }

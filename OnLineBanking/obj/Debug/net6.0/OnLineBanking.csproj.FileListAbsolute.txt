@@ -55,7 +55,6 @@ C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\OnLineBanking.GeneratedMSBuildEd
 C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\OnLineBanking.AssemblyInfoInputs.cache
 C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\OnLineBanking.AssemblyInfo.cs
 C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\OnLineBanking.csproj.CoreCompileInputs.cache
-C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\OnLineBanking.MvcApplicationPartsAssemblyInfo.cs
 C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\OnLineBanking.MvcApplicationPartsAssemblyInfo.cache
 C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\staticwebassets\msbuild.OnLineBanking.Microsoft.AspNetCore.StaticWebAssets.props
 C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\staticwebassets\msbuild.build.OnLineBanking.props
@@ -93,3 +92,5 @@ C:\OnLineBanking\OnLineBanking\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\
 C:\OnLineBanking\OnLineBanking\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\OnLineBanking\OnLineBanking\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\OnLineBanking\OnLineBanking\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\OnLineBanking.MvcApplicationPartsAssemblyInfo.cs
+C:\OnLineBanking\OnLineBanking\obj\Debug\net6.0\OnLineBanking.sourcelink.json

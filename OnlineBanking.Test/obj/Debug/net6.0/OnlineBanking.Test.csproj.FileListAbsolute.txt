@@ -10,3 +10,4 @@ C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.dll
 C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\refint\OnlineBanking.Test.dll
 C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.pdb
 C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\ref\OnlineBanking.Test.dll
+C:\OnLineBanking\OnlineBanking.Test\obj\Debug\net6.0\OnlineBanking.Test.sourcelink.json

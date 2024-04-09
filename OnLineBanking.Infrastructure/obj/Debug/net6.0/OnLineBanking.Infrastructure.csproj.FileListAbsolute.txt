@@ -17,3 +17,4 @@ C:\OnLineBanking\OnLineBanking.Infrastructure\obj\Debug\net6.0\refint\OnLineBank
 C:\OnLineBanking\OnLineBanking.Infrastructure\obj\Debug\net6.0\OnLineBanking.Infrastructure.pdb
 C:\OnLineBanking\OnLineBanking.Infrastructure\obj\Debug\net6.0\OnLineBanking.Infrastructure.genruntimeconfig.cache
 C:\OnLineBanking\OnLineBanking.Infrastructure\obj\Debug\net6.0\ref\OnLineBanking.Infrastructure.dll
+C:\OnLineBanking\OnLineBanking.Infrastructure\obj\Debug\net6.0\OnLineBanking.Infrastructure.sourcelink.json

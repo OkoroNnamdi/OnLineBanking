@@ -1,5 +1,11 @@
-﻿using OnLineBanking.Core.Domain;
+﻿using AutoMapper;
+using CloudinaryDotNet.Actions;
+using Microsoft.EntityFrameworkCore;
+using OnLineBanking.Core.Domain;
+using OnLineBanking.Core.DTO;
 using OnLineBanking.Core.IRepository;
+using OnLineBanking.Core.IServices;
+using OnLineBanking.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,40 +15,95 @@ using System.Threading.Tasks;
 
 namespace OnLineBanking.Core.Repository
 {
-    public class AccountRepository :GenericRepository<Account> ,IBankAccounRepository
+    public class AccountRepository :GenericRepository<Account> ,IBankAccountRepository
     {
         private readonly OnlineBankDBContext _context;
-        public AccountRepository(OnlineBankDBContext context):base(context)
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
+        public AccountRepository(OnlineBankDBContext context,IMapper mapper,IUnitOfWork unitOfWork):base(context)
         {
+            _context = context;
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
             
         }
-        public Task<Account> Authenticate(string AccounNumber, string password)
+
+        public async  Task<Response<string>> Authenticate(AuthenticateDto authenticate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var account = _context.accounts.Where(x => x.Account_Number == authenticate.AccountNumber).FirstOrDefault();
+                if (account == null)
+                    return new Response<string>
+                    {
+                        Data = null,
+                        Succeeded = false,
+                        StatusCode = 404,
+                        Message = "Account Not found"
+                    };
+                if (!VerifyPasswordHash(authenticate.Password, account.PasswordHash, account.PasswordSalt))
+                {
+                    return Response<string>.Fail("Authentication failed");
+                }
+                return Response<string>.Success("Bank authentication Sucessful", account.AccountName);
+            }
+            catch (Exception ex)
+            {
+
+                return Response<string>.Fail($"Authentication failed {ex.Message}");
+            }
         }
-        public Task<Account> Create(Account account, string password, string confirmPassword)
+        private bool VerifyPasswordHash(string paswword, byte[] passwordHash, byte[] passwordSalt)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(paswword))
+                throw new ArgumentNullException("password");
+            using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
+            {
+                var computedPasswordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(paswword));
+                for (int i = 0; i < computedPasswordHash.Length; i++)
+                {
+                    if (computedPasswordHash[i] != passwordHash[i])
+                        return false;
+                }
+            }
+            return true;
         }
-        public Task Delete(int accountId)
+        private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
-            throw new NotImplementedException();
+            using (var Hmac = new System.Security.Cryptography.HMACSHA512())
+            {
+                passwordSalt = Hmac.Key;
+                passwordHash = Hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+            }
         }
-        public Task<Account> GetAccountByAccountNumber(string AccountNumber)
+        public async  Task<Response<AccountDto>> Create(CreateAccountDto createAccount)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (!createAccount.Password.Equals(createAccount.ConfirmPassword))
+                    throw new ArgumentException("Passwords do not match");
+                byte[] passwordHash, passwordSalt;
+                CreatePasswordHash(createAccount.Password, out passwordHash, out passwordSalt);
+                var newAccount = _mapper.Map<Account>(createAccount);
+                newAccount.PasswordSalt = passwordSalt;
+                newAccount.PasswordHash = passwordHash;
+                _context.Add(newAccount);
+                await _unitOfWork.SaveChanges();
+                var createdAccount = _mapper.Map<AccountDto>(newAccount);
+                return Response<AccountDto>.Success("Account Created sucessfully", createdAccount);
+            }
+            catch (Exception ex)
+            {
+
+                return Response<AccountDto>.Fail("Account creation failed" + ex.Message);
+            }  
         }
-        public Task<IEnumerable<Account>> GetAllAccounts()
+        public async  Task UpdateAsync(Account account)
         {
-            throw new NotImplementedException();
+            _context.Entry(account).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
-        public Task<Account> GetByEmail(string Email)
-        {
-            throw new NotImplementedException();
-        }
-        public Task<Account> Update(Account account)
-        {
-            throw new NotImplementedException();
-        }
+
+       
     }
 }

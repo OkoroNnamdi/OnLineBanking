@@ -23,6 +23,9 @@ namespace OnLineBanking.Core.Repository
             _mapper = mapper;
 
         }
+        public UserRepository(OnlineBankDBContext context)
+        {
+        }
         public async  Task<bool> DeleteUserAsync(string currentUserId, string userIdToDelete)
         {
             // get the user making the request

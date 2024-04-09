@@ -1,4 +1,5 @@
-﻿using OnLineBanking.Core.Domain;
+﻿using Microsoft.EntityFrameworkCore.Query.Internal;
+using OnLineBanking.Core.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace OnLineBanking.Core.IRepository
 {
     public interface IReviewRepository: IGenericRepository<Review>
     {
-       Task< Review> AddReview(string review);
+       Task<IEnumerable < Review>> GetCustomerReview(string Bank_ID);
 
-       Task <IQueryable<Review>> GetHotelReviews(string hotelId);
+       Task <IQueryable <Review>> GetBankReviews(string BankId);
+         Task  AddReview(string customer_Id,Review review);
     }
 }

@@ -44,6 +44,10 @@ namespace OnLineBanking.Core.Repository
             _context = context;
          
         }
+        public AuthenticationRepository(OnlineBankDBContext context)
+        {
+            _context = context;
+        }
         public string GetId() => _httpContext.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
         public async  Task<Result<string>> ChangePassword(ChangePasswordDTO changePasswordDTO)
         {

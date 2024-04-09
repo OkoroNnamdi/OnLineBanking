@@ -1,5 +1,6 @@
 ﻿using AspNetCoreHero.Results;
 using OnLineBanking.Core.Domain;
+using OnLineBanking.Core.DTO;
 using OnLineBanking.Core.Utility;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,13 @@ namespace OnLineBanking.Sercice.Interfaces
 {
     public  interface IBankAccountService
     {
-        Task <Response<Account>>Authenticate(string AccounNumber, string password);
-        Task<IEnumerable<Account>> GetAllAccounts();
-        Task<Response<Account>> GetAccountByAccountNumber(string AccountNumber);
-        Task<Response<Account>> Create(Account account, string password, string confirmPassword);
-        Task<Response<Account>> Update(Account account);
-        Task<Result<string >> Delete(int accountId);
-        Task<Result<Account>> GetByEmail(string Email);
+        Task <Response<string>>Authenticate(AuthenticateDto authenticate);
+        Task<Response<IEnumerable<AccountDto>>> GetAllAccounts();
+        Task<Response<AccountDto>> GetAccountByAccountNumber(string accountNumber);
+        Task<Response<AccountDto>> Create(CreateAccountDto createAccount);
+        Task<Response<AccountDto>> Update(AccountDto account,string Id);
+        Task<Result<string >> Delete(string accountId);
+        Task<Result<AccountDto>> GetByEmail(string email);
+
     }
 }

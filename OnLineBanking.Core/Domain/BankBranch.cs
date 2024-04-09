@@ -19,7 +19,6 @@ namespace OnLineBanking.Core.Domain
         public string BranchName { get; set; }
         public string BankBranchCode { get; set; }
         public string Location { get;set; }
-        public string Rating { get; set; }
         public string ManagerId { get; set; }
         public Manager Manager { get; set; }
         public ICollection<Customer> Customer { get; set; }
