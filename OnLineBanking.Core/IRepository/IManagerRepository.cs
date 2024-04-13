@@ -11,6 +11,6 @@ namespace OnLineBanking.Core.IRepository
     {
         Task<Manager> GetManager(string Id);
 
-        Manager GetBanksByManager(string Id);
+        Task<Manager> GetManagerPerBank(string Id);
     }
 }

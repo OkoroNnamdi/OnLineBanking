@@ -1,5 +1,6 @@
 ﻿using OnLineBanking.Core.Domain;
 using OnLineBanking.Core.IRepository;
+using Raven.Client.Documents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +15,21 @@ namespace OnLineBanking.Core.Repository
         private readonly OnlineBankDBContext _context;
         public ManagerRepository(OnlineBankDBContext context):base(context)
         {
+
             _context = context;
         }
 
-        public Manager GetBanksByManager(string Id)
+        public async Task< Manager> GetManagerPerBank(string Id)
         {
-            throw new NotImplementedException();
+          var manager = _context.Managers.Include(x=>x.BankBranch).
+                Where (x=>x.Id == Id).FirstOrDefaultAsync();
+            return await manager;
         }
 
-        public Task<Manager> GetManager(string Id)
+        public async Task<Manager> GetManager(string Id)
         {
-            throw new NotImplementedException();
+         var manager= _context.Managers.FirstOrDefaultAsync(x => x.Id == Id);
+            return await manager;
         }
     }
 }

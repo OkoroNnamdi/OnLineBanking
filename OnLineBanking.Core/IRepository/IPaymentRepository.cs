@@ -9,10 +9,10 @@ namespace OnLineBanking.Core.IRepository
 {
     public  interface IPaymentRepository: IGenericRepository<Payment>
     {
-        Task<Manager> GetBranchManager(string managerId);
+        Task<BankBranch> GetBranchManager(string managerId);
         Task<BankBranch> GetAllBankBranchTransaction(string BankId);
-        Task<IQueryable<Payment>> GetAllCustomerTransactions(string hotelId, string customerId);
-        Task<IQueryable<Payment>> GetAllTransactionForManager(string managerId);
+        Task<IQueryable<Payment>> GetAllCustomerTransactions(string bankId, string customerId);
+        Task<IQueryable<Payment>> GetAllPaymentForManager(string managerId);
         Task<IQueryable<Payment>> CustomerTransactions(string customerId);
     }
 }

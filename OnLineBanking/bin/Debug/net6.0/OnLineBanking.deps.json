@@ -17,6 +17,7 @@
           "MimeKit": "4.2.0",
           "NETCore.MailKit": "2.1.0",
           "OnLineBanking.Core": "1.0.0",
+          "OnlineBanking.Application": "1.0.0",
           "Serilog": "2.10.0",
           "Serilog.Sinks.File": "5.0.0",
           "Serilog.Sinks.RavenDB": "3.0.0",

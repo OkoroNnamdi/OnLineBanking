@@ -20,19 +20,19 @@ namespace OnLineBanking.Core.Repository
         private readonly OnlineBankDBContext _context;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-        public AccountRepository(OnlineBankDBContext context,IMapper mapper,IUnitOfWork unitOfWork):base(context)
+        public AccountRepository(OnlineBankDBContext context,IMapper mapper):base(context)
         {
             _context = context;
             _mapper = mapper;
-            _unitOfWork = unitOfWork;
-            
+                 
         }
 
         public async  Task<Response<string>> Authenticate(AuthenticateDto authenticate)
         {
             try
             {
-                var account = _context.accounts.Where(x => x.Account_Number == authenticate.AccountNumber).FirstOrDefault();
+                var account =await _context.accounts.Where(x => x.Account_Number ==
+                authenticate.AccountNumber).FirstOrDefaultAsync();
                 if (account == null)
                     return new Response<string>
                     {
@@ -45,7 +45,7 @@ namespace OnLineBanking.Core.Repository
                 {
                     return Response<string>.Fail("Authentication failed");
                 }
-                return Response<string>.Success("Bank authentication Sucessful", account.AccountName);
+                return Response<string>.Success("Banwk authentication Sucessful", account.AccountName);
             }
             catch (Exception ex)
             {

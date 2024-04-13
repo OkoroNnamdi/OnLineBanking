@@ -1,4 +1,5 @@
 ﻿
+using AutoMapper;
 using OnLineBanking.Core.IRepository;
 using OnLineBanking.Core.IServices;
 using OnLineBanking.Core.Repository;
@@ -14,6 +15,7 @@ namespace OnLineBanking.Core.Services
 
     {
         private readonly OnlineBankDBContext _db;
+        private IMapper _mapper;
 
         private IAdminRepository _AdminRepository;
         private  IBankBranchRepository _BankBranchRepository;
@@ -30,9 +32,10 @@ namespace OnLineBanking.Core.Services
         private IReviewRepository _reviewRepository;
         private ITransactionRepository _transactionRepository;
         private IWishlistRepository _wishlistRepository;
-        public UnitOfWork(OnlineBankDBContext db)
+        public UnitOfWork(OnlineBankDBContext db,IMapper mapper)
         {
             _db=db;
+            _mapper=mapper;
         }
         private bool _disposed;
         public IBankBranchRepository BankBranchRepository => _BankBranchRepository ??= new BankBranchRepository(_db);
@@ -49,13 +52,13 @@ namespace OnLineBanking.Core.Services
         public IPaymentRepository paymentRepository => _PaymentRepository??=new PaymentRepository(_db);
         public IReviewRepository reviewRepository =>_reviewRepository??=new ReviewRepository (_db);
         public ITransactionRepository transactionRepository =>
-            _transactionRepository??=new BankTransactionRepository (_db);
+            _transactionRepository??=new BankTransactionRepository (_db,_mapper);
         public IAdminRepository adminRepository => _AdminRepository??=new AdminRepository (_db);
         public IUserRepository userRepository => _UserRepository??= new UserRepository (_db);
         public IAuthenticationRepository authenticationRepository => 
             _authenticationRepository ??= new AuthenticationRepository(_db);
         public IBankAccountRepository BankAccounRepository =>
-            _BankAccounRepository ??= new AccountRepository(_db);
+            _BankAccounRepository ??= new AccountRepository(_db, _mapper);
         public IWishlistRepository wishlistRepository => _wishlistRepository ??=new WishlistRepository(_db);
 
         public IRateBankRepository rateBankRepository => throw new NotImplementedException();

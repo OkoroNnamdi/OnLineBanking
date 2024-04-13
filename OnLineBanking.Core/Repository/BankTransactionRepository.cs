@@ -137,7 +137,7 @@ namespace OnLineBanking.Core.Repository
                 if (depositDto.amount <= 0)
                     throw new ApplicationException("Invalid transaction amount!");
                 distinationAccount.Amount += depositDto.amount;
-                if ((_dbContext.Entry(distinationAccount).State == Microsoft.EntityFrameworkCore.EntityState.Modified))
+                if ((_dbContext.Entry(distinationAccount).State == EntityState.Modified))
                 {
                     transaction.TransactionStatus = TranStatus.Success;
                     return  new Response<string >() { Succeeded = true };
@@ -195,7 +195,7 @@ namespace OnLineBanking.Core.Repository
                     throw new ApplicationException("Invalid transaction credentials");
                 sourceAccount.Amount -=transferDto.Amount;
                 destinationAccount.Amount +=transferDto.Amount;
-                if (_dbContext.Entry(sourceAccount).State == Microsoft.EntityFrameworkCore.EntityState.Modified
+                if (_dbContext.Entry(sourceAccount).State == EntityState.Modified
                     && _dbContext.Entry(destinationAccount).State == EntityState.Modified)
                 {
                     transaction.TransactionStatus = TranStatus.Success;

@@ -1,4 +1,6 @@
-﻿using OnLineBanking.Core.Domain;
+﻿
+using Microsoft.EntityFrameworkCore;
+using OnLineBanking.Core.Domain;
 using OnLineBanking.Core.IRepository;
 using System;
 using System.Collections.Generic;
@@ -26,19 +28,21 @@ namespace OnLineBanking.Core.Repository
             throw new NotImplementedException();
         }
 
-        public Task<IQueryable<Payment>> GetAllCustomerTransactions(string hotelId, string customerId)
+        public Task<IQueryable<Payment>> GetAllCustomerTransactions(string bankId, string customerId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IQueryable<Payment>> GetAllTransactionForManager(string managerId)
+        public Task<IQueryable<Payment>> GetAllPaymentForManager(string managerId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Manager> GetBranchManager(string managerId)
+        public async Task<BankBranch> GetBranchManager(string managerId)
         {
-            throw new NotImplementedException();
+           var bank =await _bankDbContext.BankBranches.Include(c=>c.Manager )
+                .Where(x=>x.ManagerId == managerId).FirstOrDefaultAsync ();
+            return bank;
         }
     }
 }

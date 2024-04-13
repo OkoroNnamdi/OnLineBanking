@@ -21,7 +21,8 @@ namespace OnLineBanking.Core.Repository
         {
             try
             {
-                var managerRequest = await _dbContext.ManagerRequests.Where(manager => manager.Id == managerId).FirstOrDefaultAsync();
+                var managerRequest = await _dbContext.ManagerRequests.
+                    Where(manager => manager.Id == managerId).FirstOrDefaultAsync();
                 return managerRequest;
             }
             catch (Exception)
